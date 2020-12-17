@@ -27,17 +27,36 @@ let library = {
                         name: "Music to cry to",
                         tracks: ["s02"]
                       }
-               },
-}  
+               }, 
+       
+       printKeys: function() {
+              let result = [];
+              let keys = Object.keys(library.songs);
+              for (i = 0; i < keys.length; i++) {
+                     console.log(keys[i]);
+              }
+       }
+}
 
 
 
 //console.log() the name of the third song on the songlist
+console.log(library.songs.s03.name);
 
 //console.log() the artist of the first track in the song list
+console.log(library.songs.s01.artist);
 
 //console.log() the entire p01 object
+console.log(library.playlists.p01);
 
 //consoel.log(the list of song IDs)
+library.printKeys()
 
-//add a song, and confirm that it was added by console logging it a second time.   
+//add a song, and confirm that it was added by console logging it a second time. 
+let newSong = {"s05":{id: "s05",
+       name: "KILL THIS LOVE",
+       artist: "BLACK PINK",
+       album: "BLACK PINK YOUR AREA"}
+}
+library.songs = newSong;
+console.log(library.songs.s05);
